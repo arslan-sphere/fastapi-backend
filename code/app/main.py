@@ -49,7 +49,8 @@ def authenticate(token):
 @app.post("/login")
 async def login(user: LogIn):
     appsecret = os.environ["appsecret"]
-    
+
+    # This is where you would execute a DB call, but I using the env variables for templating
     current_user = {
         "userid": os.environ["userid"],
         "username": os.environ["username"],
