@@ -5,9 +5,9 @@ services:
       - 8000:80
     build:
       context: .
-      dockerfile: "./container/Dockerfile"
+      dockerfile: "./code/Dockerfile"
     env_file: .env
-    environment: 
+    environment:
       GRANT_SUDO: "yes"
     volumes:
-      - "./container/server:/code/app"
+      - "./code/app:/code/app"

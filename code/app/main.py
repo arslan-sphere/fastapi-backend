@@ -6,13 +6,14 @@ from fastapi.middleware.cors import CORSMiddleware
 # Standard Libraries
 import datetime as dt
 from jose import jwt
-import bcrypt, os, uuid
-from typing import Annotated
+import bcrypt, os
 
+# Routers
+from app.routes.first_test_router import router as FirstTestRouter
 
 app = FastAPI()
 
-router = APIRouter()
+app.include_router(FirstTestRouter, prefix="/test")
 
 origins = [
     "http://localhost.tiangolo.com",
