@@ -49,7 +49,8 @@ def authenticate(token):
 @app.post("/login")
 async def login(user: LogIn):
     appsecret = os.environ["appsecret"]
-    
+
+    # This is where you would want to have a DB call to get credentials, as we don't have a universal DB for a template project, I am using Environment variables.
     current_user = {
         "userid": os.environ["userid"],
         "username": os.environ["username"],
